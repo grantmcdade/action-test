@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: grantmcdade/action-test
+        uses: grantmcdade/action-test@5acc1d3e52a3b577ca842a4f14a04d70a16b897a
         with:
           who-to-greet: 'Grant'
       # Use the output from the `hello` step
