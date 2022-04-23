@@ -8466,22 +8466,26 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
+var exports = __webpack_exports__;
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __nccwpck_require__(7561);
 const github = __nccwpck_require__(7698);
-
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
-} catch (error) {
-  core.setFailed(error.message);
+    // `who-to-greet` input defined in action metadata file
+    const nameToGreet = core.getInput('who-to-greet');
+    console.log(`Hello ${nameToGreet}! This is the latest action code!`);
+    const time = (new Date()).toTimeString();
+    core.setOutput("time", time);
+    // Get the JSON webhook payload for the event that triggered the workflow
+    const payload = JSON.stringify(github.context.payload, undefined, 2);
+    console.log(`The event payload: ${payload}`);
+}
+catch (error) {
+    core.setFailed(error.message);
 }
 
 })();
